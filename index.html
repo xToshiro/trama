@@ -42,6 +42,12 @@
         #top-header-nav a.active::after {
             width: 100%;
         }
+        .dark #top-header-nav a.active {
+            color: #22c55e; /* green-500 */
+        }
+        .dark #top-header-nav a::after {
+            background-color: #22c55e;
+        }
 
         /* Animações de scroll */
         .reveal {
@@ -72,7 +78,10 @@
             height: 120px;
         }
         .wave-divider .shape-fill {
-            fill: #F0FDF4; /* green-50, cor da próxima seção */
+            fill: #F0FDF4; /* green-50 */
+        }
+        .dark .wave-divider .shape-fill {
+            fill: #1f2937; /* gray-800 */
         }
         
         .card-hover-effect {
@@ -84,19 +93,35 @@
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             border-color: #16a34a;
         }
+        .dark .card-hover-effect:hover {
+            border-color: #22c55e;
+            box-shadow: 0 20px 25px -5px rgb(34 197 94 / 0.1), 0 8px 10px -6px rgb(34 197 94 / 0.1);
+        }
 
         /* Estilos do Carrossel Flickity */
         .flickity-page-dots .dot {
             background: #a7f3d0; /* green-200 */
         }
+        .dark .flickity-page-dots .dot {
+            background: #4b5563; /* gray-600 */
+        }
         .flickity-page-dots .dot.is-selected {
             background: #16a34a; /* green-600 */
+        }
+        .dark .flickity-page-dots .dot.is-selected {
+            background: #22c55e; /* green-500 */
         }
         .flickity-button {
             background: white;
         }
+        .dark .flickity-button {
+            background: #374151; /* gray-700 */
+        }
         .flickity-button:hover {
             background: #dcfce7; /* green-100 */
+        }
+        .dark .flickity-button:hover {
+            background: #4b5563; /* gray-600 */
         }
         .flickity-prev-next-button {
             width: 44px;
@@ -104,6 +129,9 @@
         }
         .flickity-button-icon {
             fill: #166534; /* green-800 */
+        }
+        .dark .flickity-button-icon {
+            fill: #a7f3d0; /* green-200 */
         }
         .flickity-prev-next-button.previous {
             left: -20px;
@@ -121,22 +149,22 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-green-50 text-gray-800 dark:bg-gray-900 dark:text-gray-300">
 
     <main>
         <!-- Header Superior Fixo -->
-        <header id="top-header" class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <header id="top-header" class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50 dark:bg-gray-800/90 dark:shadow-green-900/20">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-3xl font-extrabold text-green-800 tracking-tighter">TRAMA</a>
+                <a href="#" class="text-3xl font-extrabold text-green-800 dark:text-green-400 tracking-tighter">TRAMA</a>
                 
                 <!-- Menu Desktop -->
-                <div id="top-header-nav" class="hidden md:flex items-center space-x-8 font-semibold text-gray-600">
+                <div id="top-header-nav" class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 dark:text-gray-300">
                     <a href="#about">Sobre</a>
                     <a href="#projects">Projetos</a>
                     <a href="#articles">Artigos</a>
                     <a href="#team">Equipe</a>
                     <a href="#contact">Contato</a>
-                    <button id="lang-toggle" class="text-sm font-semibold text-gray-500 hover:text-green-600 focus:outline-none ml-4 p-2 rounded-md bg-gray-100">EN / PT</button>
+                    <button id="lang-toggle" class="text-sm font-semibold text-gray-500 hover:text-green-600 focus:outline-none ml-4 p-2 rounded-md bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:hover:text-green-400">EN / PT</button>
                 </div>
 
                 <!-- Botão Menu Mobile -->
@@ -145,20 +173,20 @@
                 </button>
             </nav>
             <!-- Dropdown Menu Mobile -->
-            <div class="hidden md:hidden" id="mobile-menu">
-                <a href="#about" class="block py-2 px-4 text-sm hover:bg-green-100">Sobre</a>
-                <a href="#projects" class="block py-2 px-4 text-sm hover:bg-green-100">Projetos</a>
-                <a href="#articles" class="block py-2 px-4 text-sm hover:bg-green-100">Artigos</a>
-                <a href="#team" class="block py-2 px-4 text-sm hover:bg-green-100">Equipe</a>
-                <a href="#contact" class="block py-2 px-4 text-sm hover:bg-green-100">Contato</a>
-                 <a href="#" id="lang-toggle-mobile" class="block py-2 px-4 text-sm hover:bg-green-100">Mudar Idioma (EN/PT)</a>
+            <div class="hidden md:hidden" id="mobile-menu" class="dark:bg-gray-800">
+                <a href="#about" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Sobre</a>
+                <a href="#projects" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Projetos</a>
+                <a href="#articles" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Artigos</a>
+                <a href="#team" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Equipe</a>
+                <a href="#contact" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Contato</a>
+                 <a href="#" id="lang-toggle-mobile" class="block py-2 px-4 text-sm hover:bg-green-100 dark:hover:bg-gray-700">Mudar Idioma (EN/PT)</a>
             </div>
         </header>
 
         <!-- Seção Hero -->
         <section id="hero" class="relative w-full h-[70vh] flex items-center justify-center bg-cover bg-center">
              <div class="absolute inset-0 bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1542224562-34392b879221?q=80&w=1932&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-green-900 via-green-900/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900 via-green-900/70 to-transparent dark:from-gray-900 dark:via-gray-900/80"></div>
             <div class="relative text-center text-white p-4 z-10">
                 <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tighter" data-pt="Inovação em Transportes e Meio Ambiente" data-en="Innovation in Transport and Environment">Inovação em Transportes e Meio Ambiente</h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto" data-pt="Pesquisando o futuro da mobilidade sustentável no Departamento de Engenharia de Transportes da UFC." data-en="Researching the future of sustainable mobility at the UFC's Department of Transport Engineering.">Pesquisando o futuro da mobilidade sustentável no Departamento de Engenharia de Transportes da UFC.</p>
@@ -171,44 +199,44 @@
         </section>
 
         <!-- Seção Sobre -->
-        <section id="about" class="py-20 bg-green-50 overflow-hidden">
+        <section id="about" class="py-20 bg-green-50 dark:bg-gray-800 overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="reveal text-center">
-                    <h2 class="text-4xl font-bold text-green-800 mb-6" data-pt="Nossas Linhas de Pesquisa" data-en="Our Research Lines">Nossas Linhas de Pesquisa</h2>
-                    <p class="text-gray-600 mb-12 max-w-4xl mx-auto text-lg" data-pt="O TRAMA investiga a complexa relação entre os sistemas de transporte e o meio ambiente. Nosso objetivo é gerar conhecimento e tecnologia para um futuro mais limpo e eficiente." data-en="TRAMA investigates the complex relationship between transport systems and the environment. Our goal is to generate knowledge and technology for a cleaner, more efficient future.">O TRAMA investiga a complexa relação entre os sistemas de transporte e o meio ambiente. Nosso objetivo é gerar conhecimento e tecnologia para um futuro mais limpo e eficiente.</p>
+                    <h2 class="text-4xl font-bold text-green-800 dark:text-green-400 mb-6" data-pt="Nossas Linhas de Pesquisa" data-en="Our Research Lines">Nossas Linhas de Pesquisa</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto text-lg" data-pt="O TRAMA investiga a complexa relação entre os sistemas de transporte e o meio ambiente. Nosso objetivo é gerar conhecimento e tecnologia para um futuro mais limpo e eficiente." data-en="TRAMA investigates the complex relationship between transport systems and the environment. Our goal is to generate knowledge and technology for a cleaner, more efficient future.">O TRAMA investiga a complexa relação entre os sistemas de transporte e o meio ambiente. Nosso objetivo é gerar conhecimento e tecnologia para um futuro mais limpo e eficiente.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 reveal">
                     <!-- Card Planejamento -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center card-hover-effect">
-                        <svg class="w-16 h-16 text-green-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503-6.734l-3.181 3.182m0,0l-3.182-3.182m3.182 3.182L12 12.75M3.75 12h16.5M3.75 6.75h16.5M3.75 17.25h16.5" /></svg>
-                        <h4 class="text-2xl font-semibold text-green-700 mb-3" data-pt="Transporte e Logística de Carga" data-en="Cargo Transport and Logistics">Transporte e Logística de Carga</h4>
-                        <p class="text-gray-600" data-pt="Análise de rotas de carga, desenvolvimento urbano, dados georreferenciados, emissões de poluentes e monitoramento da qualidade do ar." data-en="Cargo route analysis, urban development, georeferenced data, pollutant emissions, and air quality monitoring.">Análise de rotas de carga, desenvolvimento urbano, dados georreferenciados, emissões de poluentes e monitoramento da qualidade do ar.</p>
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg text-center card-hover-effect">
+                        <svg class="w-16 h-16 text-green-500 dark:text-green-400 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503-6.734l-3.181 3.182m0,0l-3.182-3.182m3.182 3.182L12 12.75M3.75 12h16.5M3.75 6.75h16.5M3.75 17.25h16.5" /></svg>
+                        <h4 class="text-2xl font-semibold text-green-700 dark:text-green-300 mb-3" data-pt="Transporte e Logística de Carga" data-en="Cargo Transport and Logistics">Transporte e Logística de Carga</h4>
+                        <p class="text-gray-600 dark:text-gray-400" data-pt="Análise de rotas de carga, desenvolvimento urbano, dados georreferenciados, emissões de poluentes e monitoramento da qualidade do ar." data-en="Cargo route analysis, urban development, georeferenced data, pollutant emissions, and air quality monitoring.">Análise de rotas de carga, desenvolvimento urbano, dados georreferenciados, emissões de poluentes e monitoramento da qualidade do ar.</p>
                     </div>
                     <!-- Card Infraestrutura -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center card-hover-effect">
-                        <svg class="w-16 h-16 text-green-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
-                        <h4 class="text-2xl font-semibold text-green-700 mb-3" data-pt="Infraestrutura dos Transportes" data-en="Transport Infrastructure">Infraestrutura dos Transportes</h4>
-                        <p class="text-gray-600" data-pt="Pesquisas com nanotecnologia em pavimentos, materiais para microclima urbano, mapas de calor e avaliação da qualidade de vias (ruído, vibração)." data-en="Research with nanotechnology in pavements, materials for urban microclimate, heat maps, and road quality assessment (noise, vibration).">Pesquisas com nanotecnologia em pavimentos, materiais para microclima urbano, mapas de calor e avaliação da qualidade de vias (ruído, vibração).</p>
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg text-center card-hover-effect">
+                        <svg class="w-16 h-16 text-green-500 dark:text-green-400 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+                        <h4 class="text-2xl font-semibold text-green-700 dark:text-green-300 mb-3" data-pt="Infraestrutura dos Transportes" data-en="Transport Infrastructure">Infraestrutura dos Transportes</h4>
+                        <p class="text-gray-600 dark:text-gray-400" data-pt="Pesquisas com nanotecnologia em pavimentos, materiais para microclima urbano, mapas de calor e avaliação da qualidade de vias (ruído, vibração)." data-en="Research with nanotechnology in pavements, materials for urban microclimate, heat maps, and road quality assessment (noise, vibration).">Pesquisas com nanotecnologia em pavimentos, materiais para microclima urbano, mapas de calor e avaliação da qualidade de vias (ruído, vibração).</p>
                     </div>
                 </div>
                 <!-- Infraestrutura do Laboratório -->
                  <div class="mt-16 reveal text-center">
-                    <h3 class="text-3xl font-bold text-green-800 mb-10" data-pt="Nossa Infraestrutura" data-en="Our Infrastructure">Nossa Infraestrutura</h3>
+                    <h3 class="text-3xl font-bold text-green-800 dark:text-green-400 mb-10" data-pt="Nossa Infraestrutura" data-en="Our Infrastructure">Nossa Infraestrutura</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div class="text-center">
-                            <svg class="w-12 h-12 text-green-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 10.5a8.25 8.25 0 00-8.25 8.25v.01a8.25 8.25 0 008.25-8.25v-.01zM14.25 10.5a8.25 8.25 0 018.25 8.25v.01a8.25 8.25 0 01-8.25-8.25v-.01zM14.25 10.5a8.25 8.25 0 00-4.125-7.223M14.25 10.5a8.25 8.25 0 014.125-7.223" /></svg>
+                            <svg class="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 10.5a8.25 8.25 0 00-8.25 8.25v.01a8.25 8.25 0 008.25-8.25v-.01zM14.25 10.5a8.25 8.25 0 018.25 8.25v.01a8.25 8.25 0 01-8.25-8.25v-.01zM14.25 10.5a8.25 8.25 0 00-4.125-7.223M14.25 10.5a8.25 8.25 0 014.125-7.223" /></svg>
                             <p class="font-semibold" data-pt="Laboratório de Química" data-en="Chemistry Lab">Laboratório de Química</p>
                         </div>
                         <div class="text-center">
-                            <svg class="w-12 h-12 text-green-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z" /></svg>
+                            <svg class="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z" /></svg>
                             <p class="font-semibold" data-pt="Eletrônica e Automação" data-en="Electronics & Automation">Eletrônica e Automação</p>
                         </div>
                         <div class="text-center">
-                            <svg class="w-12 h-12 text-green-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5v2.25m0-2.25l2.25 1.313M9 12l2.25-1.313M9 12v2.25m0-2.25l2.25 1.313M15 12l-2.25-1.313M15 12v2.25m0-2.25l-2.25 1.313M3 16.5l2.25-1.313M3 16.5v2.25m0-2.25l2.25 1.313M9 21l2.25-1.313M9 21v2.25m0-2.25l2.25 1.313M15 21l-2.25-1.313M15 21v2.25m0-2.25l-2.25 1.313M21 16.5l-2.25-1.313M21 16.5v2.25m0-2.25l-2.25 1.313M12 1.5l-2.25 1.313M12 1.5v2.25m0-2.25l2.25 1.313M12 6l2.25-1.313M12 6v2.25m0-2.25L9.75 4.687M12 15l2.25-1.313M12 15v2.25m0-2.25L9.75 13.687M12 19.5l2.25-1.313M12 19.5v2.25m0-2.25L9.75 18.187" /></svg>
+                            <svg class="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5v2.25m0-2.25l2.25 1.313M9 12l2.25-1.313M9 12v2.25m0-2.25l2.25 1.313M15 12l-2.25-1.313M15 12v2.25m0-2.25l-2.25 1.313M3 16.5l2.25-1.313M3 16.5v2.25m0-2.25l2.25 1.313M9 21l2.25-1.313M9 21v2.25m0-2.25l2.25 1.313M15 21l-2.25-1.313M15 21v2.25m0-2.25l-2.25 1.313M21 16.5l-2.25-1.313M21 16.5v2.25m0-2.25l-2.25 1.313M12 1.5l-2.25 1.313M12 1.5v2.25m0-2.25l2.25 1.313M12 6l2.25-1.313M12 6v2.25m0-2.25L9.75 4.687M12 15l2.25-1.313M12 15v2.25m0-2.25L9.75 13.687M12 19.5l2.25-1.313M12 19.5v2.25m0-2.25L9.75 18.187" /></svg>
                             <p class="font-semibold" data-pt="Impressão 3D" data-en="3D Printing">Impressão 3D</p>
                         </div>
                         <div class="text-center">
-                            <svg class="w-12 h-12 text-green-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3v-6a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3m-13.5 0v2.25a3 3 0 003 3h7.5a3 3 0 003-3v-2.25" /></svg>
+                            <svg class="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3v-6a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3m-13.5 0v2.25a3 3 0 003 3h7.5a3 3 0 003-3v-2.25" /></svg>
                             <p class="font-semibold" data-pt="Pátio Computacional" data-en="Computing Patio">Pátio Computacional</p>
                         </div>
                     </div>
@@ -217,32 +245,32 @@
         </section>
 
         <!-- Seção de Projetos -->
-        <section id="projects" class="py-20 bg-white overflow-hidden">
+        <section id="projects" class="py-20 bg-white dark:bg-gray-800 overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-green-800" data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</h2>
-                    <p class="text-gray-600 mt-2" data-pt="Conheça algumas de nossas pesquisas em andamento." data-en="Discover some of our ongoing research.">Conheça algumas de nossas pesquisas em andamento.</p>
+                    <h2 class="text-4xl font-bold text-green-800 dark:text-green-400" data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2" data-pt="Conheça algumas de nossas pesquisas em andamento." data-en="Discover some of our ongoing research.">Conheça algumas de nossas pesquisas em andamento.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect reveal">
+                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-hover-effect reveal">
                             <img src="https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?q=80&w=1974&auto=format&fit=crop" class="w-full h-56 object-cover" alt="Monitoramento da Qualidade do Ar">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl mb-2 text-green-700" data-pt="Monitoramento da Qualidade do Ar" data-en="Air Quality Monitoring">Monitoramento da Qualidade do Ar</h3>
-                                <p class="text-gray-700 text-base" data-pt="Utilização de amostradores passivos e ativos para análise da poluição em áreas urbanas e rodoviárias." data-en="Use of passive and active samplers to analyze pollution in urban and highway areas.">Utilização de amostradores passivos e ativos para análise da poluição em áreas urbanas e rodoviárias.</p>
+                                <h3 class="font-bold text-xl mb-2 text-green-700 dark:text-green-300" data-pt="Monitoramento da Qualidade do Ar" data-en="Air Quality Monitoring">Monitoramento da Qualidade do Ar</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-base" data-pt="Utilização de amostradores passivos e ativos para análise da poluição em áreas urbanas e rodoviárias." data-en="Use of passive and active samplers to analyze pollution in urban and highway areas.">Utilização de amostradores passivos e ativos para análise da poluição em áreas urbanas e rodoviárias.</p>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect reveal" style="transition-delay: 100ms;">
+                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-hover-effect reveal" style="transition-delay: 100ms;">
                             <img src="https://blogdaengenharia.com/wp-content/uploads/2024/01/grafeno-1536x1080.jpg" class="w-full h-56 object-cover" alt="Pavimentos Frios">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl mb-2 text-green-700" data-pt="Pavimentos Frios com Nanotecnologia" data-en="Cool Pavements with Nanotechnology">Pavimentos Frios com Nanotecnologia</h3>
-                                <p class="text-gray-700 text-base" data-pt="Desenvolvimento de materiais inovadores para reduzir a temperatura de superfícies e melhorar o microclima urbano." data-en="Development of innovative materials to reduce surface temperatures and improve the urban microclimate.">Desenvolvimento de materiais inovadores para reduzir a temperatura de superfícies e melhorar o microclima urbano.</p>
+                                <h3 class="font-bold text-xl mb-2 text-green-700 dark:text-green-300" data-pt="Pavimentos Frios com Nanotecnologia" data-en="Cool Pavements with Nanotechnology">Pavimentos Frios com Nanotecnologia</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-base" data-pt="Desenvolvimento de materiais inovadores para reduzir a temperatura de superfícies e melhorar o microclima urbano." data-en="Development of innovative materials to reduce surface temperatures and improve the urban microclimate.">Desenvolvimento de materiais inovadores para reduzir a temperatura de superfícies e melhorar o microclima urbano.</p>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect reveal" style="transition-delay: 200ms;">
+                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-hover-effect reveal" style="transition-delay: 200ms;">
                             <img src="https://saclogistica.com.br/wp-content/uploads/2021/03/Roteirizacao-de-cargas-Mapa-3-768x768.png" class="w-full h-56 object-cover" alt="Rotas de Carga">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl mb-2 text-green-700" data-pt="Análise de Rotas de Carga" data-en="Cargo Route Analysis">Análise de Rotas de Carga</h3>
-                                <p class="text-gray-700 text-base" data-pt="Modelagem com dados georreferenciados para otimizar a logística de carga e avaliar o impacto das emissões." data-en="Modeling with georeferenced data to optimize freight logistics and assess the impact of emissions.">Modelagem com dados georreferenciados para otimizar a logística de carga e avaliar o impacto das emissões.</p>
+                                <h3 class="font-bold text-xl mb-2 text-green-700 dark:text-green-300" data-pt="Análise de Rotas de Carga" data-en="Cargo Route Analysis">Análise de Rotas de Carga</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-base" data-pt="Modelagem com dados georreferenciados para otimizar a logística de carga e avaliar o impacto das emissões." data-en="Modeling with georeferenced data to optimize freight logistics and assess the impact of emissions.">Modelagem com dados georreferenciados para otimizar a logística de carga e avaliar o impacto das emissões.</p>
                             </div>
                         </div>
                 </div>
@@ -250,54 +278,54 @@
         </section>
 
         <!-- Seção de Artigos em Destaque -->
-        <section id="articles" class="py-20 bg-green-50 overflow-hidden">
+        <section id="articles" class="py-20 bg-green-50 dark:bg-gray-900 overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-green-800" data-pt="Artigos em Destaque" data-en="Featured Articles">Artigos em Destaque</h2>
-                    <p class="text-gray-600 mt-2" data-pt="Nossas publicações mais recentes." data-en="Our latest publications.">Nossas publicações mais recentes.</p>
+                    <h2 class="text-4xl font-bold text-green-800 dark:text-green-400" data-pt="Artigos em Destaque" data-en="Featured Articles">Artigos em Destaque</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2" data-pt="Nossas publicações mais recentes." data-en="Our latest publications.">Nossas publicações mais recentes.</p>
                 </div>
                 <div class="main-carousel reveal" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 6000, "pageDots": true }'>
                     <!-- Artigo 1 -->
                     <div class="carousel-cell w-full md:w-1/2 lg:w-1/3 px-4">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                             <img src="https://placehold.co/600x400/16a34a/FFFFFF?text=Artigo+1" class="w-full h-48 object-cover" alt="Imagem do Artigo 1">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-lg mb-2 text-green-700" data-pt="Impacto de Novas Tecnologias em Pavimentos" data-en="Impact of New Technologies on Pavements">Impacto de Novas Tecnologias em Pavimentos</h3>
-                                <p class="text-gray-700 text-sm flex-grow" data-pt="Uma análise sobre a aplicação de nanotecnologia para a durabilidade e sustentabilidade de vias urbanas." data-en="An analysis of the application of nanotechnology for the durability and sustainability of urban roads.">Uma análise sobre a aplicação de nanotecnologia para a durabilidade e sustentabilidade de vias urbanas.</p>
-                                <a href="#" class="mt-4 text-green-600 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
+                                <h3 class="font-bold text-lg mb-2 text-green-700 dark:text-green-300" data-pt="Impacto de Novas Tecnologias em Pavimentos" data-en="Impact of New Technologies on Pavements">Impacto de Novas Tecnologias em Pavimentos</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-sm flex-grow" data-pt="Uma análise sobre a aplicação de nanotecnologia para a durabilidade e sustentabilidade de vias urbanas." data-en="An analysis of the application of nanotechnology for the durability and sustainability of urban roads.">Uma análise sobre a aplicação de nanotecnologia para a durabilidade e sustentabilidade de vias urbanas.</p>
+                                <a href="#" class="mt-4 text-green-600 dark:text-green-400 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
                             </div>
                         </div>
                     </div>
                     <!-- Artigo 2 -->
                     <div class="carousel-cell w-full md:w-1/2 lg:w-1/3 px-4">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                             <img src="https://placehold.co/600x400/15803d/FFFFFF?text=Artigo+2" class="w-full h-48 object-cover" alt="Imagem do Artigo 2">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-lg mb-2 text-green-700" data-pt="Modelagem de Emissões Veiculares" data-en="Vehicular Emissions Modeling">Modelagem de Emissões Veiculares</h3>
-                                <p class="text-gray-700 text-sm flex-grow" data-pt="Estudo comparativo de modelos de emissão para frotas de veículos pesados em corredores logísticos." data-en="Comparative study of emission models for heavy-duty vehicle fleets in logistics corridors.">Estudo comparativo de modelos de emissão para frotas de veículos pesados em corredores logísticos.</p>
-                                <a href="#" class="mt-4 text-green-600 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
+                                <h3 class="font-bold text-lg mb-2 text-green-700 dark:text-green-300" data-pt="Modelagem de Emissões Veiculares" data-en="Vehicular Emissions Modeling">Modelagem de Emissões Veiculares</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-sm flex-grow" data-pt="Estudo comparativo de modelos de emissão para frotas de veículos pesados em corredores logísticos." data-en="Comparative study of emission models for heavy-duty vehicle fleets in logistics corridors.">Estudo comparativo de modelos de emissão para frotas de veículos pesados em corredores logísticos.</p>
+                                <a href="#" class="mt-4 text-green-600 dark:text-green-400 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
                             </div>
                         </div>
                     </div>
                     <!-- Artigo 3 -->
                     <div class="carousel-cell w-full md:w-1/2 lg:w-1/3 px-4">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                             <img src="https://placehold.co/600x400/047857/FFFFFF?text=Artigo+3" class="w-full h-48 object-cover" alt="Imagem do Artigo 3">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-lg mb-2 text-green-700" data-pt="Qualidade do Ar e Saúde Pública" data-en="Air Quality and Public Health">Qualidade do Ar e Saúde Pública</h3>
-                                <p class="text-gray-700 text-sm flex-grow" data-pt="Correlação entre a concentração de poluentes atmosféricos e os impactos na saúde da população local." data-en="Correlation between the concentration of atmospheric pollutants and impacts on the health of the local population.">Correlação entre a concentração de poluentes atmosféricos e os impactos na saúde da população local.</p>
-                                <a href="#" class="mt-4 text-green-600 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
+                                <h3 class="font-bold text-lg mb-2 text-green-700 dark:text-green-300" data-pt="Qualidade do Ar e Saúde Pública" data-en="Air Quality and Public Health">Qualidade do Ar e Saúde Pública</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-sm flex-grow" data-pt="Correlação entre a concentração de poluentes atmosféricos e os impactos na saúde da população local." data-en="Correlation between the concentration of atmospheric pollutants and impacts on the health of the local population.">Correlação entre a concentração de poluentes atmosféricos e os impactos na saúde da população local.</p>
+                                <a href="#" class="mt-4 text-green-600 dark:text-green-400 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
                             </div>
                         </div>
                     </div>
                      <!-- Artigo 4 -->
                     <div class="carousel-cell w-full md:w-1/2 lg:w-1/3 px-4">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                             <img src="https://placehold.co/600x400/065f46/FFFFFF?text=Artigo+4" class="w-full h-48 object-cover" alt="Imagem do Artigo 4">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-lg mb-2 text-green-700" data-pt="Logística Reversa e Sustentabilidade" data-en="Reverse Logistics and Sustainability">Logística Reversa e Sustentabilidade</h3>
-                                <p class="text-gray-700 text-sm flex-grow" data-pt="Análise de otimização de redes de logística reversa para resíduos da construção civil na região metropolitana." data-en="Optimization analysis of reverse logistics networks for construction waste in the metropolitan region.">Análise de otimização de redes de logística reversa para resíduos da construção civil na região metropolitana.</p>
-                                <a href="#" class="mt-4 text-green-600 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
+                                <h3 class="font-bold text-lg mb-2 text-green-700 dark:text-green-300" data-pt="Logística Reversa e Sustentabilidade" data-en="Reverse Logistics and Sustainability">Logística Reversa e Sustentabilidade</h3>
+                                <p class="text-gray-700 dark:text-gray-400 text-sm flex-grow" data-pt="Análise de otimização de redes de logística reversa para resíduos da construção civil na região metropolitana." data-en="Optimization analysis of reverse logistics networks for construction waste in the metropolitan region.">Análise de otimização de redes de logística reversa para resíduos da construção civil na região metropolitana.</p>
+                                <a href="#" class="mt-4 text-green-600 dark:text-green-400 font-semibold hover:underline" data-pt="Leia mais" data-en="Read more">Leia mais</a>
                             </div>
                         </div>
                     </div>
@@ -306,74 +334,74 @@
         </section>
 
         <!-- Seção da Equipe -->
-        <section id="team" class="py-20 bg-white overflow-hidden">
+        <section id="team" class="py-20 bg-white dark:bg-gray-800 overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-green-800" data-pt="Nossos Pesquisadores" data-en="Our Researchers">Nossos Pesquisadores</h2>
-                    <p class="text-gray-600 mt-2" data-pt="A força motriz por trás de nossas inovações." data-en="The driving force behind our innovations.">A força motriz por trás de nossas inovações.</p>
+                    <h2 class="text-4xl font-bold text-green-800 dark:text-green-400" data-pt="Nossos Pesquisadores" data-en="Our Researchers">Nossos Pesquisadores</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2" data-pt="A força motriz por trás de nossas inovações." data-en="The driving force behind our innovations.">A força motriz por trás de nossas inovações.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
                     <div class="text-center reveal">
                         <img src="https://placehold.co/200x200/90EE90/333333?text=Foto" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Foto do coordenador">
-                        <h4 class="font-bold text-xl text-gray-800">Prof. Dr. Coordenador</h4>
-                        <p class="text-green-600 font-semibold" data-pt="Coordenador" data-en="Coordinator">Coordenador</p>
+                        <h4 class="font-bold text-xl text-gray-800 dark:text-gray-200">Prof. Dr. Coordenador</h4>
+                        <p class="text-green-600 dark:text-green-400 font-semibold" data-pt="Coordenador" data-en="Coordinator">Coordenador</p>
                     </div>
                     <div class="text-center reveal" style="transition-delay: 100ms;">
                         <img src="https://placehold.co/200x200/98FB98/333333?text=Foto" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Foto da coordenadora">
-                        <h4 class="font-bold text-xl text-gray-800">Profa. Dra. Coordenadora</h4>
-                        <p class="text-green-600 font-semibold" data-pt="Coordenadora" data-en="Coordinator">Coordenadora</p>
+                        <h4 class="font-bold text-xl text-gray-800 dark:text-gray-200">Profa. Dra. Coordenadora</h4>
+                        <p class="text-green-600 dark:text-green-400 font-semibold" data-pt="Coordenadora" data-en="Coordinator">Coordenadora</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div class="reveal" style="transition-delay: 200ms;">
                         <img src="https://placehold.co/200x200/E0F2F1/333333?text=Foto" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md" alt="Foto do membro da equipe">
-                        <h4 class="font-bold text-lg text-gray-800">Pesquisador Sênior</h4>
-                        <p class="text-gray-500" data-pt="Doutorando" data-en="PhD Candidate">Doutorando</p>
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Pesquisador Sênior</h4>
+                        <p class="text-gray-500 dark:text-gray-400" data-pt="Doutorando" data-en="PhD Candidate">Doutorando</p>
                     </div>
                     <div class="reveal" style="transition-delay: 300ms;">
                         <img src="https://placehold.co/200x200/B2DFDB/333333?text=Foto" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md" alt="Foto do membro da equipe">
-                        <h4 class="font-bold text-lg text-gray-800">Pesquisadora Jr.</h4>
-                        <p class="text-gray-500" data-pt="Mestranda" data-en="Master's Student">Mestranda</p>
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Pesquisadora Jr.</h4>
+                        <p class="text-gray-500 dark:text-gray-400" data-pt="Mestranda" data-en="Master's Student">Mestranda</p>
                     </div>
                     <div class="reveal" style="transition-delay: 400ms;">
                         <img src="https://placehold.co/200x200/E0F2F1/333333?text=Foto" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md" alt="Foto do membro da equipe">
-                        <h4 class="font-bold text-lg text-gray-800">Pesquisador Sênior</h4>
-                        <p class="text-gray-500" data-pt="Doutorando" data-en="PhD Candidate">Doutorando</p>
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Pesquisador Sênior</h4>
+                        <p class="text-gray-500 dark:text-gray-400" data-pt="Doutorando" data-en="PhD Candidate">Doutorando</p>
                     </div>
                     <div class="reveal" style="transition-delay: 500ms;">
                         <img src="https://placehold.co/200x200/B2DFDB/333333?text=Foto" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md" alt="Foto do membro da equipe">
-                        <h4 class="font-bold text-lg text-gray-800">Iniciação Científica</h4>
-                        <p class="text-gray-500" data-pt="Graduando" data-en="Undergraduate">Graduando</p>
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Iniciação Científica</h4>
+                        <p class="text-gray-500 dark:text-gray-400" data-pt="Graduando" data-en="Undergraduate">Graduando</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Seção de Contato -->
-        <section id="contact" class="py-20 bg-green-50">
+        <section id="contact" class="py-20 bg-green-50 dark:bg-gray-900">
             <div class="container mx-auto px-6">
-                <div class="bg-white p-8 md:p-12 rounded-lg max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-lg max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
                      <div>
-                         <h2 class="text-4xl font-bold text-green-800 mb-4" data-pt="Vamos Conversar?" data-en="Let's Talk?">Vamos Conversar?</h2>
-                         <p class="text-gray-600 mb-8" data-pt="Tem uma ideia de projeto ou quer saber mais sobre nosso trabalho? Envie uma mensagem." data-en="Have a project idea or want to know more about our work? Send us a message.">Tem uma ideia de projeto ou quer saber mais sobre nosso trabalho? Envie uma mensagem.</p>
+                         <h2 class="text-4xl font-bold text-green-800 dark:text-green-400 mb-4" data-pt="Vamos Conversar?" data-en="Let's Talk?">Vamos Conversar?</h2>
+                         <p class="text-gray-600 dark:text-gray-400 mb-8" data-pt="Tem uma ideia de projeto ou quer saber mais sobre nosso trabalho? Envie uma mensagem." data-en="Have a project idea or want to know more about our work? Send us a message.">Tem uma ideia de projeto ou quer saber mais sobre nosso trabalho? Envie uma mensagem.</p>
                          <div class="space-y-4">
-                            <p class="flex items-center text-gray-700"><svg class="w-5 h-5 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> UFC, Depto. de Eng. de Transportes, Fortaleza, CE</p>
-                            <p class="flex items-center text-gray-700"><svg class="w-5 h-5 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> contato.trama@ufc.br</p>
+                            <p class="flex items-center text-gray-700 dark:text-gray-300"><svg class="w-5 h-5 mr-3 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> UFC, Depto. de Eng. de Transportes, Fortaleza, CE</p>
+                            <p class="flex items-center text-gray-700 dark:text-gray-300"><svg class="w-5 h-5 mr-3 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> contato.trama@ufc.br</p>
                          </div>
                      </div>
                      <div>
-                         <form class="bg-gray-50 p-8 rounded-lg">
+                         <form class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg">
                              <div class="mb-4">
-                                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2" data-pt="Nome" data-en="Name">Nome</label>
-                                 <input type="text" id="name" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                 <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" data-pt="Nome" data-en="Name">Nome</label>
+                                 <input type="text" id="name" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required>
                              </div>
                              <div class="mb-4">
-                                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                                 <input type="email" id="email" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                 <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Email</label>
+                                 <input type="email" id="email" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required>
                              </div>
                              <div class="mb-6">
-                                 <label for="message" class="block text-gray-700 text-sm font-bold mb-2" data-pt="Mensagem" data-en="Message">Mensagem</label>
-                                 <textarea id="message" rows="4" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                                 <label for="message" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                                 <textarea id="message" rows="4" class="shadow-inner appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
                              </div>
                              <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
                          </form>
@@ -384,10 +412,10 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-green-900 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
+    <footer class="bg-green-900 dark:bg-black">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-300">
             <p>&copy; 2024 Laboratório TRAMA. Todos os direitos reservados.</p>
-            <p class="text-sm text-green-300 mt-2" data-pt="Apoio: UFC & Departamento de Engenharia de Transportes" data-en="Support: UFC & Department of Transport Engineering">Apoio: UFC & Departamento de Engenharia de Transportes</p>
+            <p class="text-sm text-green-300 dark:text-green-700 mt-2" data-pt="Apoio: UFC & Departamento de Engenharia de Transportes" data-en="Support: UFC & Department of Transport Engineering">Apoio: UFC & Departamento de Engenharia de Transportes</p>
         </div>
     </footer>
     
@@ -469,3 +497,4 @@
     </script>
 </body>
 </html>
+
